@@ -1,0 +1,9 @@
+{
+    "name": "eslam-portfolio",
+    "version": "1.0.0",
+    "description": "Professional portfolio for Eslam Salim",
+    "scripts": {
+        "start": "npx serve -l 8080 ."
+    },
+    "dependencies": {}
+}
