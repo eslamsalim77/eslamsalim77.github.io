@@ -177,11 +177,10 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.setProperty('--my', `${e.clientY - r.top}px`);
     }));
 
-    // --- Download CV (print stylesheet → Save as PDF) ---
-    // Also runs for Ctrl/Cmd+P: make sure nothing is mid-animation or hidden in the printout.
+    // --- Print (Ctrl/Cmd+P uses the print stylesheet; the Download CV buttons serve the PDF file) ---
+    // Make sure nothing is mid-animation or hidden in the printout.
     window.addEventListener('beforeprint', () => {
         $$('.reveal').forEach((el) => el.classList.add('is-visible'));
         $$('[data-count]').forEach((el) => { el.textContent = `${el.dataset.count}${el.dataset.suffix || ''}`; });
     });
-    $$('[data-print]').forEach((btn) => btn.addEventListener('click', () => window.print()));
 });
