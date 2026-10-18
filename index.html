@@ -1,21 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eslam Salim | Flutter Developer</title>
-    <link rel="icon" type="image/jpeg" sizes="16x16" href="assets/myphoto.jpg">
+    <title data-i18n="meta.title">Eslam Salim | Senior Flutter Developer</title>
+    <meta name="description" data-i18n-attr="content:meta.description"
+        content="Eslam Salim — Senior Flutter Developer with 5+ years of experience shipping production iOS &amp; Android apps: ride-hailing, marketplaces, live streaming and EdTech. Work includes Material Stations, Aabir, Golden Voice, SAWTI and more.">
+    <meta name="author" content="Eslam Salim">
+    <meta name="theme-color" content="#0a0f1f">
+    <link rel="canonical" href="https://eslamsalim77.github.io/">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" data-i18n-attr="content:meta.title" content="Eslam Salim | Senior Flutter Developer">
+    <meta property="og:description" data-i18n-attr="content:meta.description"
+        content="Eslam Salim — Senior Flutter Developer with 5+ years of experience shipping production iOS &amp; Android apps: ride-hailing, marketplaces, live streaming and EdTech. Work includes Material Stations, Aabir, Golden Voice, SAWTI and more.">
+    <meta property="og:url" content="https://eslamsalim77.github.io/">
+    <meta property="og:image" content="https://eslamsalim77.github.io/assets/myphoto.jpg">
+    <meta name="twitter:card" content="summary">
+
     <link rel="icon" type="image/jpeg" sizes="32x32" href="assets/myphoto.jpg">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/myphoto.jpg">
-    <meta name="description"
-        content="Eslam Salim - Senior Mobile Application Developer specialized in Flutter. Building scalable production apps.">
+
+    <!-- Apply saved theme + language before first paint (no flash) -->
+    <script>
+        (function () {
+            var root = document.documentElement;
+            root.classList.add('js');
+            var theme = null, lang = null;
+            try { theme = localStorage.getItem('theme'); } catch (e) { }
+            try { lang = localStorage.getItem('lang'); } catch (e) { }
+            try {
+                var q = new URLSearchParams(location.search).get('lang');
+                if (q === 'ar' || q === 'en') lang = q;
+            } catch (e) { }
+            if (theme !== 'light' && theme !== 'dark') {
+                theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            }
+            if (lang !== 'ar' && lang !== 'en') {
+                lang = /^ar/i.test(navigator.language || '') ? 'ar' : 'en';
+            }
+            root.setAttribute('data-theme', theme);
+            root.setAttribute('lang', lang);
+            root.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            window.__lang = lang;
+        })();
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Icons -->
@@ -23,565 +60,882 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Eslam Salim",
+        "alternateName": "إسلام سالم",
+        "jobTitle": "Senior Flutter Developer",
+        "url": "https://eslamsalim77.github.io/",
+        "image": "https://eslamsalim77.github.io/assets/myphoto.jpg",
+        "email": "mailto:eslamsalim40@gmail.com",
+        "knowsLanguage": ["en", "ar"],
+        "knowsAbout": ["Flutter", "Dart", "Clean Architecture", "Bloc", "iOS", "Android", "REST APIs", "WebSockets"],
+        "sameAs": [
+            "https://github.com/eslamsalim77",
+            "https://www.linkedin.com/in/eslam-salim-470120160/",
+            "https://www.facebook.com/eslam.salim.39/"
+        ]
+    }
+    </script>
 </head>
 
 <body>
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">Eslam<span class="highlight"> Salim</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact" class="btn btn-primary">Contact Me</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="line1"></span>
-                <span class="line2"></span>
-                <span class="line3"></span>
+    <header class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#top" class="logo" data-i18n-attr="aria-label:nav.homeLabel" aria-label="Eslam Salim — home">
+                <span class="logo-mark" aria-hidden="true">ES</span>
+                <span class="logo-text" data-i18n="brand.name">Eslam<span class="highlight"> Salim</span></span>
+            </a>
+
+            <nav id="nav-menu" class="nav-menu" data-i18n-attr="aria-label:nav.label" aria-label="Primary">
+                <ul class="nav-links">
+                    <li><a href="#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+                    <li><a href="#apps" data-i18n="nav.apps">Apps</a></li>
+                    <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="lang-btn" id="lang-toggle" type="button" data-i18n-attr="aria-label:lang.aria"
+                    aria-label="Switch to Arabic">
+                    <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                    <span data-i18n="lang.label" lang="ar">العربية</span>
+                </button>
+                <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to light theme"
+                    data-i18n-attr="title:theme.title" title="Toggle theme">
+                    <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+                    <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+                </button>
+                <button class="btn btn-primary btn-sm nav-cta" type="button" data-print>
+                    <i class="fa-solid fa-download" aria-hidden="true"></i> <span data-i18n="cta.download">Download
+                        CV</span>
+                </button>
+                <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu"
+                    aria-expanded="false" aria-controls="nav-menu">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-        <div class="hero-bg-animation"></div>
-        <div class="container hero-content">
-            <div class="hero-layout">
+    <main id="main">
+
+        <!-- Hero -->
+        <section id="top" class="hero">
+            <div class="hero-bg" aria-hidden="true">
+                <span class="orb orb-1"></span>
+                <span class="orb orb-2"></span>
+                <span class="grid-overlay"></span>
+            </div>
+
+            <div class="container hero-layout">
                 <div class="hero-text">
-                    <span class="subtitle">👋 Hi, I'm Eslam Salim</span>
-                    <h1 class="hero-title">
-                        Flutter Developer Building <br>
-                        <span class="gradient-text">Scalable Production Apps</span>
-                    </h1>
-                    <p class="hero-description">
-                        5+ years of experience crafting high-performance iOS & Android applications.
-                        Specialized in Clean Architecture, Scalability, and Pixel-Perfect UI.
+                    <span class="status-pill"><span class="pulse-dot" aria-hidden="true"></span> <span
+                            data-i18n="hero.status">Open to remote opportunities</span></span>
+                    <p class="hero-hello" data-i18n="hero.hello">Hi, I'm</p>
+                    <h1 class="hero-title"><span class="gradient-text" data-i18n="hero.name">Eslam Salim</span></h1>
+                    <p class="hero-role" data-i18n="hero.role">Senior Flutter Developer</p>
+                    <p class="hero-rotator" aria-live="off"><span data-i18n="hero.rotatorPrefix">I build</span> <span
+                            class="rotator-word" id="rotator">scalable production apps</span><span class="caret"
+                            aria-hidden="true"></span></p>
+                    <p class="hero-description" data-i18n="hero.description">
+                        Senior Flutter Developer with 5+ years of experience taking mobile products from architecture
+                        to App Store and Google Play release. I've shipped ride-hailing, live-streaming, audio and
+                        multi-vendor marketplace apps for clients in Qatar, Saudi Arabia and Egypt, with a focus on
+                        Clean Architecture, real-time performance and maintainable code.
                     </p>
+
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="https://wa.me/201097885976" target="_blank" class="btn btn-whatsapp"><i
-                                class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+                        <a href="#apps" class="btn btn-primary"><i class="fa-solid fa-mobile-screen-button"
+                                aria-hidden="true"></i> <span data-i18n="hero.viewApps">View My Apps</span></a>
+                        <button type="button" class="btn btn-outline" data-print><i class="fa-solid fa-download"
+                                aria-hidden="true"></i> <span data-i18n="cta.download">Download CV</span></button>
+                        <a href="https://wa.me/201097885976" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                            <span data-i18n="common.whatsapp">WhatsApp</span></a>
                     </div>
 
-                    <div class="tech-badges">
-                        <span class="badge"><i class="fa-solid fa-layer-group"></i> Flutter</span>
-                        <span class="badge"><i class="fa-solid fa-code"></i> Dart</span>
-                        <span class="badge"><i class="fa-brands fa-apple"></i> iOS</span>
-                        <span class="badge"><i class="fa-brands fa-android"></i> Android</span>
-                    </div>
+                    <ul class="hero-socials" data-i18n-attr="aria-label:hero.socials" aria-label="Social links">
+                        <li><a href="https://github.com/eslamsalim77" target="_blank" rel="noopener noreferrer"
+                                aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/eslam-salim-470120160/" target="_blank"
+                                rel="noopener noreferrer" aria-label="LinkedIn"><i
+                                    class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li><a href="https://www.facebook.com/eslam.salim.39/" target="_blank"
+                                rel="noopener noreferrer" aria-label="Facebook"><i
+                                    class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="mailto:eslamsalim40@gmail.com" data-i18n-attr="aria-label:common.email"
+                                aria-label="Email"><i class="fa-solid fa-envelope"></i></a></li>
+                    </ul>
                 </div>
-                <div class="hero-image-wrapper">
-                    <img src="assets/myphoto.jpg" alt="Eslam Salim" class="profile-img">
-                    <div class="floating-icon icon-1"><img src="assets/flutter_logo.png" alt="Flutter"
-                            class="tech-icon-img"></div>
-                    <div class="floating-icon icon-2"><img src="assets/dart_logo.png" alt="Dart" class="tech-icon-img">
+
+                <div class="hero-visual">
+                    <div class="photo-card">
+                        <img src="assets/myphoto.jpg" data-i18n-attr="alt:hero.photoAlt"
+                            alt="Portrait of Eslam Salim" class="profile-img" width="1280" height="1118"
+                            fetchpriority="high">
                     </div>
-                    <div class="floating-icon icon-3">&lt;/&gt;</div>
-                    <div class="floating-icon icon-4"><i class="fa-solid fa-terminal"></i></div>
+                    <div class="chip chip-1"><img src="assets/flutter_logo.png" alt="" width="22" height="22">
+                        Flutter</div>
+                    <div class="chip chip-2"><img src="assets/dart_logo.png" alt="" width="22" height="22"> Dart
+                    </div>
+                    <div class="chip chip-3"><i class="fa-brands fa-apple" aria-hidden="true"></i> <i
+                            class="fa-brands fa-android" aria-hidden="true"></i> iOS &amp; Android</div>
                 </div>
             </div>
-        </div>
 
-        <div class="scroll-down">
-            <div class="mouse">
-                <div class="wheel"></div>
+            <div class="container">
+                <dl class="stats-strip">
+                    <div class="stat">
+                        <dt data-i18n="stats.years">Years of experience</dt>
+                        <dd><span class="stat-number" data-count="5" data-suffix="+">5+</span></dd>
+                    </div>
+                    <div class="stat">
+                        <dt data-i18n="stats.projects">Projects delivered</dt>
+                        <dd><span class="stat-number" data-count="20" data-suffix="+">20+</span></dd>
+                    </div>
+                    <div class="stat">
+                        <dt data-i18n="stats.apps">Live apps &amp; platforms</dt>
+                        <dd><span class="stat-number" data-count="12">12</span></dd>
+                    </div>
+                    <div class="stat">
+                        <dt data-i18n="stats.remote">Remote ready</dt>
+                        <dd><span class="stat-number" data-count="100" data-suffix="%">100%</span></dd>
+                    </div>
+                </dl>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About <span class="highlight">Me</span></h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p class="lead">
-                        I'm a Mobile Application Developer with <strong class="highlight">5+ years of
-                            experience</strong>, specializing in building high-performance iOS and Android applications
-                        using <strong class="highlight">Flutter</strong>.
+        <!-- About -->
+        <section id="about" class="section">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="eyebrow" data-i18n="about.eyebrow">About</span>
+                    <h2 class="section-title" data-i18n="about.title">Engineering mindset, <span
+                            class="gradient-text">product focus</span></h2>
+                </header>
+
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p class="lead" data-i18n="about.lead">
+                            I'm a Mobile Application Developer with <strong class="highlight">5+ years of
+                                experience</strong> building high-performance iOS and Android applications with
+                            <strong class="highlight">Flutter</strong>.
+                        </p>
+                        <p data-i18n="about.p2">
+                            I currently work as a <strong>Flutter Developer at SkyCrew</strong> (remote), shipping
+                            scalable, production-level apps and collaborating with international teams across
+                            <strong>Qatar and Saudi Arabia</strong>.
+                        </p>
+                        <p data-i18n="about.p3">
+                            My approach centres on <strong>Clean Architecture</strong>, solid problem-solving and
+                            delivering pixel-perfect user experiences — taking products from first commit all the way
+                            to live store listings.
+                        </p>
+
+                        <ul class="facts">
+                            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                <span data-i18n="about.fact1">Egypt · working remotely with teams in Qatar &amp; Saudi
+                                    Arabia</span>
+                            </li>
+                            <li><i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+                                <span data-i18n="about.fact2">Flutter Developer @ SkyCrew (2024 – Present)</span>
+                            </li>
+                            <li><i class="fa-solid fa-store" aria-hidden="true"></i>
+                                <span data-i18n="about.fact3">Built the <a href="#material-stations">Material
+                                        Stations</a> multi-app ecosystem</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="about-visual reveal">
+                        <div class="code-card">
+                            <div class="card-header">
+                                <span class="dot red"></span><span class="dot yellow"></span><span
+                                    class="dot green"></span>
+                                <span class="file-name">eslam_salim.dart</span>
+                            </div>
+                            <pre class="card-body"><code><span class="keyword">class</span> <span class="class-name">Developer</span> {
+  <span class="keyword">final</span> <span class="class-name">String</span> name = <span class="string">'Eslam Salim'</span>;
+  <span class="keyword">final</span> <span class="class-name">String</span> role = <span class="string">'Senior Flutter Developer'</span>;
+  <span class="keyword">final</span> <span class="class-name">List</span>&lt;<span class="class-name">String</span>&gt; focus = [
+    <span class="string">'Clean Architecture'</span>,
+    <span class="string">'Real-time systems'</span>,
+    <span class="string">'Pixel-perfect UI'</span>,
+  ];
+
+  <span class="class-name">Future</span>&lt;<span class="keyword">void</span>&gt; <span class="function">ship</span>() <span class="keyword">async</span> {
+    <span class="keyword">await</span> code.<span class="function">clean</span>();
+    <span class="keyword">await</span> app.<span class="function">optimize</span>();
+    <span class="keyword">await</span> store.<span class="function">publish</span>();
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strengths">
+                    <article class="strength spot reveal">
+                        <i class="fa-solid fa-sitemap" aria-hidden="true"></i>
+                        <h3 data-i18n="str.arch.title">Clean Architecture</h3>
+                        <p data-i18n="str.arch.text">Layered, testable codebases with SOLID principles, MVVM and
+                            dependency injection.</p>
+                    </article>
+                    <article class="strength spot reveal">
+                        <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                        <h3 data-i18n="str.rt.title">Real-time systems</h3>
+                        <p data-i18n="str.rt.text">Live tracking, WebSockets, video streaming and audio playback that
+                            stay smooth under load.</p>
+                    </article>
+                    <article class="strength spot reveal">
+                        <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+                        <h3 data-i18n="str.ship.title">Store-ready delivery</h3>
+                        <p data-i18n="str.ship.text">CI/CD, Google Play and App Store Connect releases for apps used in
+                            production.</p>
+                    </article>
+                    <article class="strength spot reveal">
+                        <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+                        <h3 data-i18n="str.team.title">Remote collaboration</h3>
+                        <p data-i18n="str.team.text">Comfortable leading and working with distributed international
+                            teams.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="section alt-bg">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="eyebrow" data-i18n="skills.eyebrow">Skills</span>
+                    <h2 class="section-title" data-i18n="skills.title">Tech <span class="gradient-text">stack</span>
+                    </h2>
+                </header>
+
+                <div class="skills-grid">
+                    <article class="skill-card spot reveal">
+                        <div class="skill-icon"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+                        </div>
+                        <h3 data-i18n="skills.core">Flutter Core</h3>
+                        <ul class="skill-list">
+                            <li>Dart</li>
+                            <li>Flutter SDK</li>
+                            <li>Material Design</li>
+                            <li>Cupertino Widgets</li>
+                            <li>Animations</li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-card spot reveal">
+                        <div class="skill-icon"><i class="fa-solid fa-sitemap" aria-hidden="true"></i></div>
+                        <h3 data-i18n="skills.arch">Architecture</h3>
+                        <ul class="skill-list">
+                            <li>Clean Architecture</li>
+                            <li>MVVM</li>
+                            <li>MVC</li>
+                            <li>SOLID Principles</li>
+                            <li>Dependency Injection</li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-card spot reveal">
+                        <div class="skill-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></div>
+                        <h3 data-i18n="skills.state">State Management</h3>
+                        <ul class="skill-list">
+                            <li>Bloc / Cubit</li>
+                            <li>Provider</li>
+                            <li>GetX</li>
+                            <li>Riverpod</li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-card spot reveal">
+                        <div class="skill-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div>
+                        <h3 data-i18n="skills.net">Networking &amp; Data</h3>
+                        <ul class="skill-list">
+                            <li>REST APIs</li>
+                            <li>GraphQL</li>
+                            <li>WebSockets</li>
+                            <li>Firebase</li>
+                            <li>Hive / Sqflite</li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-card spot reveal">
+                        <div class="skill-icon"><i class="fa-solid fa-plug" aria-hidden="true"></i></div>
+                        <h3 data-i18n="skills.integ">Integrations</h3>
+                        <ul class="skill-list">
+                            <li>Google Maps API</li>
+                            <li>Agora (live video)</li>
+                            <li>Speech-to-Text</li>
+                            <li>AI Integration</li>
+                            <li>Audio Service / JustAudio</li>
+                            <li>Payment Gateways</li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-card spot reveal">
+                        <div class="skill-icon"><i class="fa-solid fa-rocket" aria-hidden="true"></i></div>
+                        <h3 data-i18n="skills.devops">DevOps &amp; Release</h3>
+                        <ul class="skill-list">
+                            <li>Git &amp; GitHub</li>
+                            <li>CI/CD</li>
+                            <li>Google Play Deploy</li>
+                            <li>App Store Connect</li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-card spot reveal">
+                        <div class="skill-icon"><i class="fa-solid fa-vial" aria-hidden="true"></i></div>
+                        <h3 data-i18n="skills.testing">Testing</h3>
+                        <ul class="skill-list">
+                            <li>Unit Testing</li>
+                            <li>Widget Testing</li>
+                            <li>Integration Testing</li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-card spot reveal">
+                        <div class="skill-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
+                        <h3 data-i18n="skills.platforms">Platforms</h3>
+                        <ul class="skill-list">
+                            <li>iOS</li>
+                            <li>Android</li>
+                            <li>Flutter Web</li>
+                            <li>Native Android</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apps -->
+        <section id="apps" class="section">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="eyebrow" data-i18n="apps.eyebrow">Portfolio</span>
+                    <h2 class="section-title" data-i18n="apps.title">Apps I've <span class="gradient-text">built
+                            &amp; shipped</span></h2>
+                    <p class="section-sub" data-i18n="apps.sub">Products on Google Play, the App Store and the web.
                     </p>
-                    <p>
-                        Currently working as a <strong class="highlight">Flutter Developer at SkyCrew
-                            (Remotly)</strong>, I
-                        have extensive experience in building scalable, production-level apps and working efficiently
-                        with remote international teams across Qatar and Saudi Arabia.
-                    </p>
-                    <p>
-                        My engineering mindset focuses on <strong class="highlight">Clean Architecture</strong>, solid
-                        problem-solving, and delivering pixel-perfect user experiences.
-                    </p>
+                </header>
 
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Years Exp.</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">20+</span>
-                            <span class="stat-label">Projects</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Remote Ready</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-visual">
-                    <!-- Abstract code/mobile visual -->
-                    <div class="code-card">
-                        <div class="card-header">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                        </div>
-                        <div class="card-body">
-                            <code>
-                                <span class="keyword">class</span> <span class="class-name">Developer</span> {<br>
-                                &nbsp;&nbsp;<span class="keyword">final</span> String name = <span class="string">"Eslam Salim"</span>;<br>
-                                &nbsp;&nbsp;<span class="keyword">final</span> String role = <span class="string">"Flutter Expert"</span>;<br>
-                                <br>
-                                &nbsp;&nbsp;<span class="keyword">void</span> <span class="function">buildAwesomeApps</span>() {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;code.clean();<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;performance.optimize();<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;coffee.drink();<br>
-                                &nbsp;&nbsp;}<br>
-                                }
-                            </code>
+                <!-- Featured: Material Stations -->
+                <article id="material-stations" class="featured reveal">
+                    <div class="featured-head">
+                        <img class="featured-logo" src="assets/material_stations_logo.png" data-logo="Material Stations"
+                            alt="Material Stations logo" width="120" height="120" loading="lazy">
+                        <div class="featured-intro">
+                            <span class="badge-featured"><i class="fa-solid fa-star" aria-hidden="true"></i> <span
+                                    data-i18n="ms.badge">Featured ecosystem</span></span>
+                            <h3>Material Stations</h3>
+                            <p class="featured-tagline" data-i18n="ms.tagline">A multi-vendor marketplace for
+                                construction materials &amp; equipment in Saudi Arabia — four connected mobile apps
+                                plus web portals.</p>
+                            <div class="featured-links">
+                                <a class="store store--web" href="https://material-stations.com/" target="_blank"
+                                    rel="noopener noreferrer"><i class="fa-solid fa-globe" aria-hidden="true"></i>
+                                    <span data-i18n="ms.storefront">Storefront</span></a>
+                                <a class="store store--web" href="https://vendor.material-stations.com/"
+                                    target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-shop"
+                                        aria-hidden="true"></i> <span data-i18n="ms.vendorPortal">Vendor
+                                        Portal</span></a>
+                                <a class="store store--play"
+                                    href="https://play.google.com/store/apps/developer?id=Material+Stations"
+                                    target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-google-play"
+                                        aria-hidden="true"></i> <span data-i18n="ms.allPlay">All apps on Google
+                                        Play</span></a>
+                            </div>
                         </div>
                     </div>
+
+                    <ol class="flow" data-i18n-attr="aria-label:ms.flowLabel" aria-label="How the ecosystem works">
+                        <li><span class="step-n">1</span> <span data-i18n="ms.flow1">Customer browses &amp;
+                                orders</span></li>
+                        <li><span class="step-n">2</span> <span data-i18n="ms.flow2">Vendor approves the order</span>
+                        </li>
+                        <li><span class="step-n">3</span> <span data-i18n="ms.flow3">Delivery is assigned</span></li>
+                        <li><span class="step-n">4</span> <span data-i18n="ms.flow4">Driver delivers to the
+                                customer</span></li>
+                    </ol>
+
+                    <div class="ms-grid">
+                        <div class="ms-app spot">
+                            <img src="assets/ms_customer_icon.png" alt="" width="64" height="64" loading="lazy">
+                            <div class="ms-body">
+                                <h4>Material Stations <small data-i18n="ms.customer">Customer</small></h4>
+                                <p data-i18n="ms.customerText">Shop for building materials &amp; equipment — choose
+                                    self-pickup or delivery.</p>
+                                <div class="app-links">
+                                    <a class="store store--play"
+                                        href="https://play.google.com/store/apps/details?id=com.superuser.ta3mer"
+                                        target="_blank" rel="noopener noreferrer"><i
+                                            class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play</a>
+                                    <a class="store store--apple" href="https://apps.apple.com/app/id6822620530"
+                                        target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-apple"
+                                            aria-hidden="true"></i> App Store</a>
+                                    <a class="store store--web" href="https://material-stations.com/" target="_blank"
+                                        rel="noopener noreferrer"><i class="fa-solid fa-globe"
+                                            aria-hidden="true"></i> <span data-i18n="common.web">Web</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ms-app spot">
+                            <img src="assets/ms_vendor_icon.png" alt="" width="64" height="64" loading="lazy">
+                            <div class="ms-body">
+                                <h4>MS Vendor <small data-i18n="ms.vendor">Sellers</small></h4>
+                                <p data-i18n="ms.vendorText">Sellers add products, receive and approve orders, and
+                                    coordinate delivery.</p>
+                                <div class="app-links">
+                                    <a class="store store--play"
+                                        href="https://play.google.com/store/apps/details?id=com.supervendor.ta3mer"
+                                        target="_blank" rel="noopener noreferrer"><i
+                                            class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play</a>
+                                    <a class="store store--apple"
+                                        href="https://apps.apple.com/eg/app/material-stations-vendor/id6737055604"
+                                        target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-apple"
+                                            aria-hidden="true"></i> App Store</a>
+                                    <a class="store store--web" href="https://vendor.material-stations.com/"
+                                        target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe"
+                                            aria-hidden="true"></i> <span data-i18n="common.web">Web</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ms-app spot">
+                            <img src="assets/ms_driver_icon.png" alt="" width="64" height="64" loading="lazy">
+                            <div class="ms-body">
+                                <h4>MS Driver <small data-i18n="ms.driver">Delivery</small></h4>
+                                <p data-i18n="ms.driverText">Drivers receive orders from distributors and deliver
+                                    them to customers.</p>
+                                <div class="app-links">
+                                    <a class="store store--play"
+                                        href="https://play.google.com/store/apps/details?id=com.superdriver.ta3mer"
+                                        target="_blank" rel="noopener noreferrer"><i
+                                            class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play</a>
+                                    <a class="store store--apple"
+                                        href="https://apps.apple.com/eg/app/material-stations-driver/id6705129050"
+                                        target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-apple"
+                                            aria-hidden="true"></i> App Store</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ms-app spot">
+                            <img src="assets/ms_provider_icon.png" alt="" width="64" height="64" loading="lazy">
+                            <div class="ms-body">
+                                <h4>MS Provider <small data-i18n="ms.provider">Services</small></h4>
+                                <p data-i18n="ms.providerText">Service providers list the services they can perform
+                                    under their own responsibility.</p>
+                                <div class="app-links">
+                                    <a class="store store--play"
+                                        href="https://play.google.com/store/apps/details?id=com.superprovider.ta3mer"
+                                        target="_blank" rel="noopener noreferrer"><i
+                                            class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play</a>
+                                    <a class="store store--apple"
+                                        href="https://apps.apple.com/eg/app/material-stations-provider/id6705129054"
+                                        target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-apple"
+                                            aria-hidden="true"></i> App Store</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="project-tech">
+                        <li>Flutter</li>
+                        <li>Bloc</li>
+                        <li>Multi-app architecture</li>
+                        <li>Order management</li>
+                        <li>Delivery workflow</li>
+                    </ul>
+                </article>
+
+                <div class="apps-grid" id="apps-grid">
+
+                    <!-- Aabir -->
+                    <article id="app-aabir" class="app-card spot reveal">
+                        <div class="app-top">
+                            <img class="app-icon" src="assets/aabir_logo.png" data-logo="Aabir" alt="Aabir logo"
+                                width="64" height="64" loading="lazy">
+                            <div>
+                                <span class="app-cat" data-i18n="aabir.cat">Ride-Hailing · Qatar</span>
+                                <h3>Aabir <small>عابر</small></h3>
+                            </div>
+                        </div>
+                        <p data-i18n="aabir.text">Separate Passenger and Captain (driver) ride-hailing apps for Qatar
+                            with robust real-time tracking.</p>
+                        <ul class="project-tech">
+                            <li>Flutter</li>
+                            <li>WebSockets</li>
+                            <li>Google Maps API</li>
+                            <li>Bloc</li>
+                        </ul>
+                        <div class="link-groups">
+                            <div class="link-group">
+                                <span class="link-label" data-i18n="aabir.passenger">Passenger</span>
+                                <div class="app-links">
+                                    <a class="store store--play"
+                                        href="https://play.google.com/store/apps/details?id=com.aaber.rider"
+                                        target="_blank" rel="noopener noreferrer"><i
+                                            class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play</a>
+                                    <a class="store store--apple"
+                                        href="https://apps.apple.com/qa/app/aabir-%D8%B9%D8%A7%D8%A8%D8%B1/id6476094429"
+                                        target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-apple"
+                                            aria-hidden="true"></i> App Store</a>
+                                </div>
+                            </div>
+                            <div class="link-group">
+                                <span class="link-label" data-i18n="aabir.captain">Captain</span>
+                                <div class="app-links">
+                                    <a class="store store--play"
+                                        href="https://play.google.com/store/apps/details?id=com.aaber.driver"
+                                        target="_blank" rel="noopener noreferrer"><i
+                                            class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play</a>
+                                    <a class="store store--apple"
+                                        href="https://apps.apple.com/qa/app/aabir-captain/id6476094701"
+                                        target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-apple"
+                                            aria-hidden="true"></i> App Store</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- WTour -->
+                    <article id="app-wtour" class="app-card spot reveal">
+                        <div class="app-top">
+                            <img class="app-icon" src="assets/wtour_logo.png" data-logo="WTour" alt="WTour logo"
+                                width="64" height="64" loading="lazy">
+                            <div>
+                                <span class="app-cat" data-i18n="wtour.cat">Travel Guide</span>
+                                <h3>WTour</h3>
+                            </div>
+                        </div>
+                        <p data-i18n="wtour.text">Travel companion for discovering historical, religious, cultural and
+                            natural sites, plus hotels and restaurants, with easy search and nearby-attraction
+                            discovery.</p>
+                        <ul class="project-tech">
+                            <li>Flutter</li>
+                            <li>Nearby Search</li>
+                            <li>Directory</li>
+                        </ul>
+                        <div class="app-links">
+                            <a class="store store--play"
+                                href="https://play.google.com/store/apps/details?id=com.skycrow.wtour"
+                                target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-google-play"
+                                    aria-hidden="true"></i> Google Play</a>
+                            <a class="store store--apple" href="https://apps.apple.com/us/app/wtour/id6745824660"
+                                target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-apple"
+                                    aria-hidden="true"></i> App Store</a>
+                        </div>
+                    </article>
+
+                    <!-- StoryLingo -->
+                    <article id="app-storylingo" class="app-card spot reveal">
+                        <div class="app-top">
+                            <img class="app-icon" src="assets/storylingo_logo.png" data-logo="StoryLingo"
+                                alt="StoryLingo logo" width="64" height="64" loading="lazy">
+                            <div>
+                                <span class="app-cat" data-i18n="story.cat">EdTech</span>
+                                <h3>StoryLingo <small>ستوريلينجو</small></h3>
+                            </div>
+                        </div>
+                        <p data-i18n="story.text">AI-powered English learning through stories, with real-time feedback
+                            on pronunciation accuracy.</p>
+                        <ul class="project-tech">
+                            <li>Flutter</li>
+                            <li>Speech-to-Text</li>
+                            <li>AI Integration</li>
+                            <li>Bloc</li>
+                        </ul>
+                        <div class="app-links">
+                            <a class="store store--play"
+                                href="https://play.google.com/store/apps/details?id=com.storyLingo.storyLingo"
+                                target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-google-play"
+                                    aria-hidden="true"></i> Google Play</a>
+                            <a class="store store--apple" href="https://apps.apple.com/us/app/id6751780506"
+                                target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-apple"
+                                    aria-hidden="true"></i> App Store</a>
+                        </div>
+                    </article>
+
+                    <!-- SAWTI -->
+                    <article id="app-sawti" class="app-card spot reveal">
+                        <div class="app-top">
+                            <img class="app-icon" src="assets/sawti_logo.png" data-logo="SAWTI" alt="SAWTI logo"
+                                width="64" height="64" loading="lazy">
+                            <div>
+                                <span class="app-cat" data-i18n="sawti.cat">Audio Streaming</span>
+                                <h3>SAWTI <small>صوتي</small></h3>
+                            </div>
+                        </div>
+                        <p data-i18n="sawti.text">Unified radio &amp; audio streaming platform with background playback
+                            and offline support.</p>
+                        <ul class="project-tech">
+                            <li>Flutter</li>
+                            <li>Audio Service</li>
+                            <li>JustAudio</li>
+                            <li>Bloc</li>
+                        </ul>
+                        <div class="app-links">
+                            <a class="store store--play"
+                                href="https://play.google.com/store/apps/details?id=com.radio.radio2509"
+                                target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-google-play"
+                                    aria-hidden="true"></i> Google Play</a>
+                            <a class="store store--apple"
+                                href="https://apps.apple.com/us/app/world-radio-fm-sawti/id6444422741" target="_blank"
+                                rel="noopener noreferrer"><i class="fa-brands fa-apple" aria-hidden="true"></i> App
+                                Store</a>
+                        </div>
+                    </article>
+
+                    <!-- Golden Voice -->
+                    <article id="app-golden-voice" class="app-card spot reveal">
+                        <div class="app-top">
+                            <img class="app-icon" src="assets/golden_voice_logo.png" data-logo="Golden Voice"
+                                alt="Golden Voice logo" width="64" height="64" loading="lazy">
+                            <div>
+                                <span class="app-cat" data-i18n="golden.cat">Social Media</span>
+                                <h3>Golden Voice <small>جولدن فويس</small></h3>
+                            </div>
+                        </div>
+                        <p data-i18n="golden.text">TikTok-style short-video and live-streaming app focused on talent
+                            discovery.</p>
+                        <ul class="project-tech">
+                            <li>Flutter</li>
+                            <li>Video Streaming</li>
+                            <li>Agora</li>
+                            <li>Bloc</li>
+                        </ul>
+                        <div class="app-links">
+                            <a class="store store--play"
+                                href="https://play.google.com/store/apps/details?id=com.goldenvoice" target="_blank"
+                                rel="noopener noreferrer"><i class="fa-brands fa-google-play"
+                                    aria-hidden="true"></i> Google Play</a>
+                            <a class="store store--apple"
+                                href="https://apps.apple.com/app/%D8%AC%D9%88%D9%84%D8%AF%D9%86-%D9%81%D9%88%D9%8A%D8%B3/id1636086737"
+                                target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-apple"
+                                    aria-hidden="true"></i> App Store</a>
+                        </div>
+                    </article>
+
+                    <!-- Egy Tour -->
+                    <article id="app-egy-tour" class="app-card spot reveal">
+                        <div class="app-top">
+                            <img class="app-icon" src="assets/egy_tour_logo.png" data-logo="Egy Tour"
+                                alt="Egy Tour logo" width="64" height="64" loading="lazy">
+                            <div>
+                                <span class="app-cat" data-i18n="egy.cat">Travel Guide</span>
+                                <h3>Egy Tour</h3>
+                            </div>
+                        </div>
+                        <p data-i18n="egy.text">Smart travel guide for exploring Egypt's top tourist destinations, with
+                            maps and a curated directory.</p>
+                        <ul class="project-tech">
+                            <li>Flutter</li>
+                            <li>Maps</li>
+                            <li>Directory</li>
+                            <li>Provider</li>
+                        </ul>
+                        <div class="app-links">
+                            <a class="store store--play"
+                                href="https://play.google.com/store/apps/details?id=com.skycrow.egyTour"
+                                target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-google-play"
+                                    aria-hidden="true"></i> Google Play</a>
+                            <a class="store store--apple" href="https://apps.apple.com/sa/app/egy-tour/id6737623064"
+                                target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-apple"
+                                    aria-hidden="true"></i> App Store</a>
+                        </div>
+                    </article>
+
+                    <!-- NodeBook -->
+                    <article id="app-nodebook" class="app-card spot reveal">
+                        <div class="app-top">
+                            <img class="app-icon" src="assets/nodebook_logo.png" data-logo="NodeBook"
+                                alt="NodeBook logo" width="64" height="64" loading="lazy">
+                            <div>
+                                <span class="app-cat" data-i18n="node.cat">Productivity · Web</span>
+                                <h3>NodeBook</h3>
+                            </div>
+                        </div>
+                        <p data-i18n="node.text">Web-based productivity platform for organising thoughts and notes in a
+                            structured tree format.</p>
+                        <ul class="project-tech">
+                            <li>Flutter Web</li>
+                            <li>Node Structure</li>
+                            <li>Secure Storage</li>
+                            <li>Provider</li>
+                        </ul>
+                        <div class="app-links">
+                            <a class="store store--web" href="https://www.nodebook.online/" target="_blank"
+                                rel="noopener noreferrer"><i class="fa-solid fa-globe" aria-hidden="true"></i> <span
+                                    data-i18n="node.open">Open Web App</span></a>
+                        </div>
+                    </article>
                 </div>
+
+                <p class="more-link reveal">
+                    <span data-i18n="apps.more">More code on</span> <a href="https://github.com/eslamsalim77"
+                        target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"
+                            aria-hidden="true"></i> GitHub</a>
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section alt-bg">
-        <div class="container">
-            <h2 class="section-title">Tech <span class="highlight">Stack</span></h2>
-            <div class="skills-grid">
-                <!-- Flutter Core -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-mobile-screen-button"></i>
-                    </div>
-                    <h3>Flutter Core</h3>
-                    <ul class="skill-list">
-                        <li>Dart Language</li>
-                        <li>Flutter SDK</li>
-                        <li>Material Design</li>
-                        <li>Cupertino Widgets</li>
-                        <li>Animations</li>
-                    </ul>
-                </div>
+        <!-- Experience -->
+        <section id="experience" class="section alt-bg">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="eyebrow" data-i18n="exp.eyebrow">Career</span>
+                    <h2 class="section-title" data-i18n="exp.title">Work <span
+                            class="gradient-text">experience</span></h2>
+                </header>
 
-                <!-- Architecture -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-sitemap"></i>
-                    </div>
-                    <h3>Architecture</h3>
-                    <ul class="skill-list">
-                        <li>Clean Architecture</li>
-                        <li>MVVM Pattern</li>
-                        <li>MVC Pattern</li>
-                        <li>SOLID Principles</li>
-                        <li>Dependency Injection</li>
-                    </ul>
-                </div>
-
-                <!-- State Management -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-database"></i>
-                    </div>
-                    <h3>State Management</h3>
-                    <ul class="skill-list">
-                        <li>Provider</li>
-                        <li>Bloc / Cubit</li>
-                        <li>GetX</li>
-                        <li>Riverpod</li>
-                    </ul>
-                </div>
-
-                <!-- Networking & Data -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-network-wired"></i>
-                    </div>
-                    <h3>Networking</h3>
-                    <ul class="skill-list">
-                        <li>REST APIs</li>
-                        <li>GraphQL</li>
-                        <li>WebSockets</li>
-                        <li>Firebase</li>
-                        <li>Local Storage (Hive/Sqflite)</li>
-                    </ul>
-                </div>
-
-                <!-- DevOps & Tools -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-wrench"></i>
-                    </div>
-                    <h3>DevOps & Tools</h3>
-                    <ul class="skill-list">
-                        <li>Git & GitHub</li>
-                        <li>CI/CD</li>
-                        <li>Google Play Deploy</li>
-                        <li>App Store Connect</li>
-                        <li>Payment Gateways</li>
-                    </ul>
-                </div>
-
-                <!-- Testing -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-vial"></i>
-                    </div>
-                    <h3>Testing</h3>
-                    <ul class="skill-list">
-                        <li>Unit Testing</li>
-                        <li>Widget Testing</li>
-                        <li>Integration Testing</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
-            <div class="projects-grid">
-
-                <!-- Project 1: Aabir -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-logo">
-                            <img src="assets/aabir_logo.png" alt="Aabir Logo">
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-category">Ride-Hailing App</span>
-                        <h3 class="project-title">Aabir (Passenger & Captain)</h3>
-
-                        <div class="project-details">
-                            <p>Separate Passenger & Driver ride-hailing apps for Qatar with robust real-time tracking.
+                <ol class="timeline">
+                    <li class="timeline-item reveal">
+                        <span class="timeline-dot" aria-hidden="true"></span>
+                        <div class="timeline-card spot">
+                            <div class="timeline-meta">
+                                <span class="timeline-date" data-i18n="exp.sky.date">2024 – Present</span>
+                                <span class="timeline-tag" data-i18n="exp.current">Current</span>
+                            </div>
+                            <h3 data-i18n="exp.flutter">Flutter Developer</h3>
+                            <span class="company" data-i18n="exp.sky.company">SkyCrew · Qatar (Remote)</span>
+                            <p data-i18n="exp.sky.text">Architecting scalable Flutter solutions for ride-hailing and
+                                logistics applications with international remote teams across Qatar and Saudi Arabia.
                             </p>
-                            <div class="project-links">
-                                <a href="https://play.google.com/store/apps/details?id=com.aaber.rider&hl=en"
-                                    target="_blank" class="store-link" title="Passenger: View on Google Play"><i
-                                        class="fa-brands fa-google-play"></i></a>
-                                <a href="https://apps.apple.com/qa/app/aabir-%D8%B9%D8%A7%D8%A8%D8%B1/id6476094429"
-                                    target="_blank" class="store-link" title="Passenger: View on App Store"><i
-                                        class="fa-brands fa-apple"></i></a>
-                                <a href="https://play.google.com/store/apps/details?id=com.aaber.driver&hl=en"
-                                    target="_blank" class="store-link" title="Captain: View on Google Play"><i
-                                        class="fa-brands fa-google-play"></i></a>
-                                <a href="https://apps.apple.com/qa/app/aabir-captain/id6476094701" target="_blank"
-                                    class="store-link" title="Captain: View on App Store"><i
-                                        class="fa-brands fa-apple"></i></a>
+                            <ul class="job-highlights">
+                                <li data-i18n="exp.sky.b1">Architected the <a href="#app-aabir">Aabir</a> passenger
+                                    &amp; captain ecosystem with real-time tracking.</li>
+                                <li data-i18n="exp.sky.b2">Managed and collaborated with international remote teams.
+                                </li>
+                                <li data-i18n="exp.sky.b3">Implemented CI/CD pipelines for faster, safer releases.
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="timeline-item reveal">
+                        <span class="timeline-dot" aria-hidden="true"></span>
+                        <div class="timeline-card spot">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2020 – 2024</span>
                             </div>
+                            <h3 data-i18n="exp.flutter">Flutter Developer</h3>
+                            <span class="company" data-i18n="exp.free.company">Freelance</span>
+                            <p data-i18n="exp.free.text">Delivered high-quality mobile applications for international
+                                clients, from first line of code to store release.</p>
+                            <ul class="job-highlights">
+                                <li data-i18n="exp.free.b1">Built the <a href="#app-golden-voice">Golden Voice</a>
+                                    short-video &amp; live streaming app.</li>
+                                <li data-i18n="exp.free.b2">Built the <a href="#material-stations">Material
+                                        Stations</a> multi-app e-commerce ecosystem.</li>
+                                <li data-i18n="exp.free.b3">Published apps to Google Play and the App Store with a
+                                    focus on performance and clean architecture.</li>
+                            </ul>
                         </div>
+                    </li>
 
-                        <div class="project-tech">
-                            <span>Flutter</span>
-                            <span>WebSockets</span>
-                            <span>Google Maps API</span>
-                            <span>Bloc</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2: StoryLingo -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-logo">
-                            <img src="assets/storylingo_logo.png" alt="StoryLingo Logo">
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-category">EdTech</span>
-                        <h3 class="project-title">StoryLingo</h3>
-
-                        <div class="project-details">
-                            <p>AI-powered reading app giving real-time feedback on pronunciation accuracy.</p>
-                            <div class="project-links">
-                                <a href="https://play.google.com/store/apps/details?id=com.storyLingo.storyLingo&hl=en"
-                                    target="_blank" class="store-link" title="View on Google Play"><i
-                                        class="fa-brands fa-google-play"></i></a>
-                                <a href="https://apps.apple.com/us/app/ستوريلينجو-تعلم-الانجليزية/id6751780506"
-                                    target="_blank" class="store-link" title="View on App Store"><i
-                                        class="fa-brands fa-apple"></i></a>
+                    <li class="timeline-item reveal">
+                        <span class="timeline-dot" aria-hidden="true"></span>
+                        <div class="timeline-card spot">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2018 – 2020</span>
                             </div>
+                            <h3 data-i18n="exp.early.title">Mobile Application Developer</h3>
+                            <span class="company" data-i18n="exp.early.company">Various Agencies</span>
+                            <p data-i18n="exp.early.text">Started my mobile development journey working on both native
+                                Android and Flutter projects.</p>
                         </div>
-
-                        <div class="project-tech">
-                            <span>Flutter</span>
-                            <span>Speech-to-Text</span>
-                            <span>AI Integration</span>
-                            <span>Bloc</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project NodeBook -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-logo">
-                            <img src="assets/nodebook_logo.png" alt="NodeBook Logo">
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-category">Productivity Platform</span>
-                        <h3 class="project-title">NodeBook</h3>
-
-                        <div class="project-details">
-                            <p>Web-based productivity platform designed for organizing thoughts and notes in a
-                                structured tree format.</p>
-                            <div class="project-links">
-                                <a href="https://www.nodebook.online/" target="_blank" class="store-link"
-                                    title="View on Web"><i class="fa-solid fa-globe"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="project-tech">
-                            <span>Flutter Web</span>
-                            <span>Node Structure</span>
-                            <span>Secure Storage</span>
-                            <span>Provider</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 3: SAWTI -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-logo">
-                            <img src="assets/sawti_logo.png" alt="SAWTI Logo">
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-category">Audio Streaming</span>
-                        <h3 class="project-title">SAWTI</h3>
-
-                        <div class="project-details">
-                            <p>Unified audio streaming platform with background playback and offline support.</p>
-                            <div class="project-links">
-                                <a href="https://play.google.com/store/apps/details?id=com.radio.radio2509&hl=en"
-                                    target="_blank" class="store-link" title="View on Google Play"><i
-                                        class="fa-brands fa-google-play"></i></a>
-                                <a href="https://apps.apple.com/us/app/world-radio-fm-sawti/id6444422741"
-                                    target="_blank" class="store-link" title="View on App Store"><i
-                                        class="fa-brands fa-apple"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="project-tech">
-                            <span>Flutter</span>
-                            <span>Audio Service</span>
-                            <span>JustAudio</span>
-                            <span>Bloc</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project Egy Tour -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-logo">
-                            <img src="assets/egy_tour_logo.png" alt="Egy Tour Logo">
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-category">Travel Guide</span>
-                        <h3 class="project-title">Egy Tour</h3>
-
-                        <div class="project-details">
-                            <p>Smart travel guide application for exploring Egypt's top tourist destinations.</p>
-                            <div class="project-links">
-                                <a href="https://play.google.com/store/apps/details?id=com.skycrow.egyTour"
-                                    target="_blank" class="store-link" title="View on Google Play"><i
-                                        class="fa-brands fa-google-play"></i></a>
-                                <a href="https://apps.apple.com/sa/app/egy-tour/id6737623064?l=ar" target="_blank"
-                                    class="store-link" title="View on App Store"><i class="fa-brands fa-apple"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="project-tech">
-                            <span>Flutter</span>
-                            <span>Maps</span>
-                            <span>Directory</span>
-                            <span>Provider</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 4: Golden Voice -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-logo">
-                            <img src="assets/golden_voice_logo.png" alt="Golden Voice Logo">
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-category">Social Media</span>
-                        <h3 class="project-title">Golden Voice</h3>
-
-                        <div class="project-details">
-                            <p>TikTok-style short video & streaming app focusing on talent discovery.</p>
-                            <div class="project-links">
-                                <a href="https://play.google.com/store/apps/details?id=com.goldenvoice" target="_blank"
-                                    class="store-link" title="View on Google Play"><i
-                                        class="fa-brands fa-google-play"></i></a>
-                                <a href="https://apps.apple.com/app/جولدن-فويس/id1636086737" target="_blank"
-                                    class="store-link" title="View on App Store"><i class="fa-brands fa-apple"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="project-tech">
-                            <span>Flutter</span>
-                            <span>Video Streaming</span>
-                            <span>Agora</span>
-                            <span>Bloc</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 5: Material Stations -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-logo">
-                            <img src="assets/material_stations_logo.png" alt="Material Stations Logo">
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-category">E-Commerce Ecosystem</span>
-                        <h3 class="project-title">Material Stations</h3>
-
-                        <div class="project-details">
-                            <p>Managing state across a 5-app multi-vendor ecosystem.</p>
-                            <div class="project-links">
-                                <a href="https://play.google.com/store/apps/details?id=com.superuser.ta3mer"
-                                    target="_blank" class="store-link" title="View on Google Play"><i
-                                        class="fa-brands fa-google-play"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="project-tech">
-                            <span>Flutter</span>
-                            <span>Store</span>
-                            <span>Bloc</span>
-                        </div>
-                    </div>
-                </article>
-
+                    </li>
+                </ol>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section alt-bg">
-        <div class="container">
-            <h2 class="section-title">Work <span class="highlight">Experience</span></h2>
-            <div class="timeline">
+        <!-- Contact -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="contact-panel reveal">
+                    <span class="eyebrow" data-i18n="contact.eyebrow">Get in touch</span>
+                    <h2 class="contact-title" data-i18n="contact.title">Let's build something <span
+                            class="gradient-text">amazing together</span></h2>
+                    <p class="contact-sub" data-i18n="contact.sub">Open to remote roles, long-term contracts and
+                        interesting product ideas.</p>
 
-                <!-- SkyCrew -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2024 - Present</div>
-                    <div class="timeline-content">
-                        <h3>Flutter Developer</h3>
-                        <span class="company">SkyCrew (Qatar)</span>
-                        <p>architecting scalable Flutter solutions for ride-hailing
-                            and logistics applications.</p>
-                        <ul class="job-highlights">
-                            <li>Managed international remote teams.</li>
-                            <li>Architected the "Aabir" ecosystem.</li>
-                            <li>Implemented CI/CD pipelines.</li>
-                        </ul>
+                    <div class="contact-grid">
+                        <a href="mailto:eslamsalim40@gmail.com" class="contact-card">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            <span class="contact-label" data-i18n="common.email">Email</span>
+                            <span class="contact-value">eslamsalim40@gmail.com</span>
+                        </a>
+                        <a href="https://wa.me/201097885976" target="_blank" rel="noopener noreferrer"
+                            class="contact-card">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                            <span class="contact-label" data-i18n="common.whatsapp">WhatsApp</span>
+                            <span class="contact-value">+20 109 788 5976</span>
+                        </a>
+                        <a href="tel:+201097885976" class="contact-card">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                            <span class="contact-label" data-i18n="contact.phone">Phone</span>
+                            <span class="contact-value">+20 109 788 5976</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/eslam-salim-470120160/" target="_blank"
+                            rel="noopener noreferrer" class="contact-card">
+                            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-value">eslam-salim-470120160</span>
+                        </a>
+                        <a href="https://github.com/eslamsalim77" target="_blank" rel="noopener noreferrer"
+                            class="contact-card">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-value">github.com/eslamsalim77</span>
+                        </a>
+                        <a href="https://www.facebook.com/eslam.salim.39/" target="_blank" rel="noopener noreferrer"
+                            class="contact-card">
+                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                            <span class="contact-label">Facebook</span>
+                            <span class="contact-value">eslam.salim.39</span>
+                        </a>
                     </div>
-                </div>
 
-                <!-- Freelance -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2020 - 2024</div>
-                    <div class="timeline-content">
-                        <h3>Flutter Developer</h3>
-                        <span class="company">Freelance</span>
-                        <p>Delivered high-quality mobile applications for various international clients.</p>
-                        <ul class="job-highlights">
-                            <li>Developed "Golden Voice" streaming app.</li>
-                            <li>Built "Material Stations" e-commerce system.</li>
-                            <li>Focus on performance and clean architecture.</li>
-                        </ul>
+                    <div class="contact-actions">
+                        <button type="button" class="btn btn-primary" data-print><i class="fa-solid fa-download"
+                                aria-hidden="true"></i> <span data-i18n="contact.downloadPdf">Download CV
+                                (PDF)</span></button>
+                        <a href="assets/eslam-salim.vcf" download class="btn btn-outline"><i
+                                class="fa-solid fa-address-card" aria-hidden="true"></i> <span
+                                data-i18n="contact.save">Save contact</span></a>
                     </div>
-                </div>
-
-                <!-- Early Career -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2018 - 2020</div>
-                    <div class="timeline-content">
-                        <h3>Mobile Application Developer</h3>
-                        <span class="company">Various Agencies</span>
-                        <p>Started specialized journey in mobile development, working on both Android (Native) and
-                            Flutter projects.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <div class="contact-content">
-                <span class="subtitle">Get In Touch</span>
-                <h2 class="contact-title">Let's Build Something <br> <span class="gradient-text">Amazing Together</span>
-                </h2>
-                <p>Open for opportunities and interesting projects.</p>
-
-                <div class="contact-links">
-                    <a href="mailto:eslamsalim40@gmail.com" class="contact-btn">
-                        <i class="fa-solid fa-envelope"></i>
-                        <span>eslamsalim40@gmail.com</span>
-                    </a>
-                    <a href="https://github.com/eslamsalim77" target="_blank" class="contact-btn">
-                        <i class="fa-brands fa-github"></i>
-                        <span>github.com/eslamsalim77</span>
-                    </a>
-                    <a href="tel:+201097885976" class="contact-btn">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>+20 109 788 5976</span>
-                    </a>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <footer class="footer">
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/eslam.salim.39/" target="_blank" class="social-link"><i
-                            class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/in/eslam-salim-470120160/" target="_blank" class="social-link"><i
-                            class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://wa.me/201097885976" target="_blank" class="social-link"><i
-                            class="fa-brands fa-whatsapp"></i></a>
-                    <a href="tel:+201097885976" class="social-link"><i class="fa-solid fa-phone"></i></a>
-                    <a href="mailto:eslamsalim40@gmail.com" class="social-link"><i class="fa-solid fa-envelope"></i></a>
-                </div>
-                <p>&copy; 2024 Eslam Salim. All rights reserved.</p>
-            </footer>
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p data-i18n="footer.rights">&copy; <span class="js-year">2026</span> Eslam Salim. All rights reserved.
+            </p>
+            <p class="footer-note" data-i18n="footer.note">Built with HTML, CSS &amp; a little JavaScript.</p>
         </div>
-    </section>
+    </footer>
 
-    <!-- Scripts -->
+    <button class="to-top" id="to-top" type="button" data-i18n-attr="aria-label:a11y.top"
+        aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
 </body>
 
